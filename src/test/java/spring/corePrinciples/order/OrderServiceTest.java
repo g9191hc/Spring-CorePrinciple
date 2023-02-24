@@ -1,19 +1,20 @@
 package spring.corePrinciples.order;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+import spring.corePrinciples.AppConfig;
 import spring.corePrinciples.member.Grade;
 import spring.corePrinciples.member.Member;
 import spring.corePrinciples.service.MemberService;
-import spring.corePrinciples.service.MemberServiceImpl;
+import spring.corePrinciples.service.memberServiceImpl;
 import spring.corePrinciples.service.OrderService;
 import spring.corePrinciples.service.OrderServiceImpl;
 
 import static org.assertj.core.api.Assertions.*;
 
 public class OrderServiceTest {
-    MemberService memberService = new MemberServiceImpl();
-    OrderService orderService = new OrderServiceImpl();
+    AppConfig ac = new AppConfig();
+    MemberService memberService = ac.memberService();
+    OrderService orderService = ac.orderService();
 @Test
     void CreateOrder(){
     Long memberId = 1L;

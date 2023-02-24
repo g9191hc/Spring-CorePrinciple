@@ -1,17 +1,22 @@
 package spring.corePrinciples;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import spring.corePrinciples.member.Grade;
 import spring.corePrinciples.member.Member;
 import spring.corePrinciples.order.Order;
 import spring.corePrinciples.service.MemberService;
-import spring.corePrinciples.service.MemberServiceImpl;
+import spring.corePrinciples.service.memberServiceImpl;
 import spring.corePrinciples.service.OrderService;
 import spring.corePrinciples.service.OrderServiceImpl;
 
 public class OrderApp {
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
-        OrderService orderService = new OrderServiceImpl();
+//        AppConfig appConfig = new AppConfig();
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+
+        MemberService memberService = ac.getBean("memberService", MemberService.class);
+        OrderService orderService = ac.getBean("orderService", OrderService.class);
 
         Long memberId = 1L;
         String memberName = "spring";

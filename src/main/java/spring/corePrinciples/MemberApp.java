@@ -1,13 +1,18 @@
 package spring.corePrinciples;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import spring.corePrinciples.member.Grade;
 import spring.corePrinciples.member.Member;
 import spring.corePrinciples.service.MemberService;
-import spring.corePrinciples.service.MemberServiceImpl;
 
 public class MemberApp {
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
+//        AppConfig appConfig = new AppConfig();
+
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+        MemberService memberService = ac.getBean("memberService", MemberService.class);
+
         Member member = new Member(1L, "memberA", Grade.BASIC);
         memberService.join(member);
 
