@@ -5,9 +5,7 @@ import spring.corePrinciples.AppConfig;
 import spring.corePrinciples.member.Grade;
 import spring.corePrinciples.member.Member;
 import spring.corePrinciples.service.MemberService;
-import spring.corePrinciples.service.memberServiceImpl;
 import spring.corePrinciples.service.OrderService;
-import spring.corePrinciples.service.OrderServiceImpl;
 
 import static org.assertj.core.api.Assertions.*;
 

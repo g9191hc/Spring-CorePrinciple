@@ -4,7 +4,6 @@ package spring.corePrinciples.member;
 import org.junit.jupiter.api.Test;
 import spring.corePrinciples.AppConfig;
 import spring.corePrinciples.service.MemberService;
-import spring.corePrinciples.service.memberServiceImpl;
 
 import static org.assertj.core.api.Assertions.*;
 

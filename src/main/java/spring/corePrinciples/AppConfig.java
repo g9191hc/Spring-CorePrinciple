@@ -4,10 +4,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import spring.corePrinciples.discount.DiscountPolicy;
 import spring.corePrinciples.discount.FixedDiscountPolicy;
-import spring.corePrinciples.discount.RateDiscountPolicy;
 import spring.corePrinciples.repository.MemoryMemberRepository;
 import spring.corePrinciples.service.MemberService;
-import spring.corePrinciples.service.memberServiceImpl;
+import spring.corePrinciples.service.MemberServiceImpl;
 import spring.corePrinciples.service.OrderService;
 import spring.corePrinciples.service.OrderServiceImpl;
 
@@ -23,7 +22,7 @@ public class AppConfig {
     }
     @Bean
     public MemberService memberService(){
-        return new memberServiceImpl(memberRepository());
+        return new MemberServiceImpl(memberRepository());
     }
     @Bean
     public OrderService orderService(){
