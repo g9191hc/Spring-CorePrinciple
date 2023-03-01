@@ -1,21 +1,19 @@
 package spring.corePrinciples.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import spring.corePrinciples.discount.DiscountPolicy;
-import spring.corePrinciples.discount.FixedDiscountPolicy;
-import spring.corePrinciples.discount.RateDiscountPolicy;
 import spring.corePrinciples.member.Member;
 import spring.corePrinciples.order.Order;
 import spring.corePrinciples.repository.MemberRepository;
-import spring.corePrinciples.repository.MemoryMemberRepository;
+
 @Component
 public class OrderServiceImpl implements OrderService{
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
-    @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, @Qualifier("mainDiscountPolicy") DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }

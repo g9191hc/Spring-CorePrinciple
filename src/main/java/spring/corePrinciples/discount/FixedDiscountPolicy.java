@@ -1,10 +1,15 @@
 package spring.corePrinciples.discount;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 import spring.corePrinciples.member.Grade;
 import spring.corePrinciples.member.Member;
 
 
-
+@Component
+@Qualifier("mainDiscountPolicy")
 public class FixedDiscountPolicy implements DiscountPolicy{
     private int discountPrice = 1000;
     @Override
