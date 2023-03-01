@@ -1,11 +1,13 @@
 package spring.corePrinciples.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import spring.corePrinciples.member.Member;
 import spring.corePrinciples.repository.MemberRepository;
-
+@Service
 public class MemberServiceImpl implements MemberService{
     private final MemberRepository memberRepository;
-
+    @Autowired
     public MemberServiceImpl(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }

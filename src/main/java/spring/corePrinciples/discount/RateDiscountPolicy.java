@@ -1,8 +1,10 @@
 package spring.corePrinciples.discount;
 
+import org.springframework.stereotype.Component;
 import spring.corePrinciples.member.Grade;
 import spring.corePrinciples.member.Member;
 
+@Component
 public class RateDiscountPolicy implements DiscountPolicy{
     double discountRate = 0.1;
     @Override
