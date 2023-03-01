@@ -1,9 +1,5 @@
 package spring.corePrinciples.discount;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import spring.corePrinciples.annotations.MainDiscountPolicy;
 import spring.corePrinciples.member.Grade;
