@@ -1,7 +1,5 @@
 package spring.corePrinciples.service;
 
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import spring.corePrinciples.annotations.MainDiscountPolicy;
 import spring.corePrinciples.discount.DiscountPolicy;
